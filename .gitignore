@@ -1,0 +1,21 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+*.pkl
+
+# PDF source files (large, distribute separately)
+data/*.pdf
+
+# All extraction output — keep only prerun fallbacks
+data/test_output/
+data/test_vlm_output/
+data/home_policy_output/
+data/earnings_output/
+data/insurance_output/
+data/policy_output/
+data/debug/
+debug/
+
+# Cypher export
+data/*.cypher

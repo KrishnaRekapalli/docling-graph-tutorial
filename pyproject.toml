@@ -1,0 +1,18 @@
+[project]
+name = "docling-graph-tutorial"
+version = "0.1.0"
+description = "PyCon 2026 tutorial: From PDFs to Knowledge Graphs with docling-graph"
+requires-python = ">=3.10"
+dependencies = [
+    "docling-graph>=0.1.0",
+    "networkx>=3.0.0",
+    "matplotlib>=3.7.0",
+    "jupyter>=1.0.0",
+    "ipykernel>=6.0.0",
+    "pyvis>=0.3.2",
+    "pypdf>=6.10.2",
+    "sentence-transformers>=5.4.1",
+]
+
+[tool.uv]
+dev-dependencies = []

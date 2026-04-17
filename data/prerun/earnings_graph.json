@@ -1,0 +1,476 @@
+{
+  "nodes": [
+    {
+      "id": "Product_870c90d683a554e0",
+      "label": "Product",
+      "type": "entity",
+      "__class__": "Product",
+      "name": "Blackwell",
+      "description": "Achieved the highest performance and best overall efficiency in the SemiAnalysis InferenceMAX benchmarks."
+    },
+    {
+      "id": "Product_8caa00a1a56b64cb",
+      "label": "Product",
+      "type": "entity",
+      "__class__": "Product",
+      "name": "NVIDIA Grace Blackwell",
+      "description": "Compute capacity for AI infrastructure."
+    },
+    {
+      "id": "Product_0c3a92ea0e28245e",
+      "label": "Product",
+      "type": "entity",
+      "__class__": "Product",
+      "name": "NVIDIA Rubin CPX",
+      "description": "A new class of GPU purpose-built for massive-context processing."
+    },
+    {
+      "id": "Product_76a764b383204f42",
+      "label": "Product",
+      "type": "entity",
+      "__class__": "Product",
+      "name": "NVIDIA NVQLink™",
+      "description": "An open system architecture for tightly coupling the extreme performance of NVIDIA GPU computing with quantum processors."
+    },
+    {
+      "id": "Product_3bd13d8e627341f4",
+      "label": "Product",
+      "type": "entity",
+      "__class__": "Product",
+      "name": "NVIDIA BlueField-4",
+      "description": "The processor for the operating system of AI factories."
+    },
+    {
+      "id": "BusinessSegment_73589e31cf1b59cb",
+      "label": "BusinessSegment",
+      "type": "entity",
+      "__class__": "BusinessSegment",
+      "name": "Data Center",
+      "revenue": "$51.2B",
+      "revenue_growth_yoy": "66%",
+      "key_products": null
+    },
+    {
+      "id": "Product_4320683542f2b4e5",
+      "label": "Product",
+      "type": "entity",
+      "__class__": "Product",
+      "name": "Borderlands 4",
+      "description": "A new game launched with NVIDIA DLSS 4."
+    },
+    {
+      "id": "Product_10c3b7fe2e3bce06",
+      "label": "Product",
+      "type": "entity",
+      "__class__": "Product",
+      "name": "Battlefield 6",
+      "description": "A new game launched with NVIDIA DLSS 4."
+    },
+    {
+      "id": "Product_3f780f9194fdad65",
+      "label": "Product",
+      "type": "entity",
+      "__class__": "Product",
+      "name": "ARC Raiders",
+      "description": "A new game launched with NVIDIA DLSS 4."
+    },
+    {
+      "id": "BusinessSegment_918e194f506cda9f",
+      "label": "BusinessSegment",
+      "type": "entity",
+      "__class__": "BusinessSegment",
+      "name": "Gaming",
+      "revenue": "$4.3B",
+      "revenue_growth_yoy": "30%",
+      "key_products": null
+    },
+    {
+      "id": "Product_9e69cf5befb8612d",
+      "label": "Product",
+      "type": "entity",
+      "__class__": "Product",
+      "name": "NVIDIA DGX Spark™",
+      "description": "The world's smallest AI supercomputer."
+    },
+    {
+      "id": "BusinessSegment_655939ea0e0e45b8",
+      "label": "BusinessSegment",
+      "type": "entity",
+      "__class__": "BusinessSegment",
+      "name": "Professional Visualization",
+      "revenue": "$760M",
+      "revenue_growth_yoy": "56%",
+      "key_products": null
+    },
+    {
+      "id": "Product_dadc56f1eeb9cee0",
+      "label": "Product",
+      "type": "entity",
+      "__class__": "Product",
+      "name": "NVIDIA DRIVE AGX Hyperion™ 10",
+      "description": "An autonomous vehicle development platform."
+    },
+    {
+      "id": "BusinessSegment_e99776fc89c38d0d",
+      "label": "BusinessSegment",
+      "type": "entity",
+      "__class__": "BusinessSegment",
+      "name": "Automotive",
+      "revenue": "$592M",
+      "revenue_growth_yoy": "32%",
+      "key_products": null
+    },
+    {
+      "id": "Product_a77b316f4ff5f5d6",
+      "label": "Product",
+      "type": "entity",
+      "__class__": "Product",
+      "name": "NVIDIA systems",
+      "description": "Systems for OpenAI's next-generation AI infrastructure."
+    },
+    {
+      "id": "Partner_0df756fd4fcbcd65",
+      "label": "Partner",
+      "type": "entity",
+      "__class__": "Partner",
+      "name": "OpenAI",
+      "deployment": "Deploying at least 10 gigawatts of NVIDIA systems for AI infrastructure.",
+      "products": null
+    },
+    {
+      "id": "Partner_647cf0b3ab0c5dbe",
+      "label": "Partner",
+      "type": "entity",
+      "__class__": "Partner",
+      "name": "Google Cloud",
+      "deployment": "Building America's AI infrastructure with NVIDIA GPUs.",
+      "products": []
+    },
+    {
+      "id": "Partner_636ec743183382f1",
+      "label": "Partner",
+      "type": "entity",
+      "__class__": "Partner",
+      "name": "Microsoft",
+      "deployment": "Building America's AI infrastructure with NVIDIA GPUs.",
+      "products": []
+    },
+    {
+      "id": "Partner_1926476ca583260d",
+      "label": "Partner",
+      "type": "entity",
+      "__class__": "Partner",
+      "name": "Oracle",
+      "deployment": "Building America's AI infrastructure with NVIDIA GPUs.",
+      "products": []
+    },
+    {
+      "id": "Partner_ad20f2467ee00291",
+      "label": "Partner",
+      "type": "entity",
+      "__class__": "Partner",
+      "name": "xAI",
+      "deployment": "Building America's AI infrastructure with NVIDIA GPUs.",
+      "products": []
+    },
+    {
+      "id": "Partner_b0ef7a7aec5e497b",
+      "label": "Partner",
+      "type": "entity",
+      "__class__": "Partner",
+      "name": "Intel",
+      "deployment": "Jointly developing multiple generations of custom data center and PC products.",
+      "products": []
+    },
+    {
+      "id": "Partner_59c91feb372c5a1c",
+      "label": "Partner",
+      "type": "entity",
+      "__class__": "Partner",
+      "name": "Nokia",
+      "deployment": "Adding NVIDIA-powered AI-RAN products to its portfolio.",
+      "products": []
+    },
+    {
+      "id": "Partner_8308285e8269d975",
+      "label": "Partner",
+      "type": "entity",
+      "__class__": "Partner",
+      "name": "Palantir Technologies",
+      "deployment": "Building an integrated technology stack for operational AI.",
+      "products": []
+    },
+    {
+      "id": "Partner_29657e675bbab1ea",
+      "label": "Partner",
+      "type": "entity",
+      "__class__": "Partner",
+      "name": "Deutsche Telekom",
+      "deployment": "Launching the world's first Industrial AI Cloud.",
+      "products": []
+    },
+    {
+      "id": "Partner_947d2e8cd5011c25",
+      "label": "Partner",
+      "type": "entity",
+      "__class__": "Partner",
+      "name": "Hyundai Motor Group",
+      "deployment": "Expanding South Korea's AI infrastructure with NVIDIA GPUs.",
+      "products": []
+    },
+    {
+      "id": "Partner_6bdaee3cf38b9acc",
+      "label": "Partner",
+      "type": "entity",
+      "__class__": "Partner",
+      "name": "Samsung Electronics",
+      "deployment": "Expanding South Korea's AI infrastructure with NVIDIA GPUs.",
+      "products": []
+    },
+    {
+      "id": "Partner_5e46f3d519bc0edf",
+      "label": "Partner",
+      "type": "entity",
+      "__class__": "Partner",
+      "name": "SK Group",
+      "deployment": "Expanding South Korea's AI infrastructure with NVIDIA GPUs.",
+      "products": []
+    },
+    {
+      "id": "Partner_741ae4d773290fbc",
+      "label": "Partner",
+      "type": "entity",
+      "__class__": "Partner",
+      "name": "NAVER Cloud",
+      "deployment": "Expanding South Korea's AI infrastructure with NVIDIA GPUs.",
+      "products": []
+    },
+    {
+      "id": "FinancialMetric_c246543eb700f7e3",
+      "label": "FinancialMetric",
+      "type": "entity",
+      "__class__": "FinancialMetric",
+      "name": "Revenue",
+      "value": "$57.0B",
+      "segment": null
+    },
+    {
+      "id": "FinancialMetric_669341768e591683",
+      "label": "FinancialMetric",
+      "type": "entity",
+      "__class__": "FinancialMetric",
+      "name": "Gross Margin",
+      "value": "73.4%",
+      "segment": null
+    },
+    {
+      "id": "FinancialMetric_4188b7d3a9ce1b13",
+      "label": "FinancialMetric",
+      "type": "entity",
+      "__class__": "FinancialMetric",
+      "name": "EPS (diluted)",
+      "value": "$1.30",
+      "segment": null
+    },
+    {
+      "id": "FinancialMetric_b215b2412889b93a",
+      "label": "FinancialMetric",
+      "type": "entity",
+      "__class__": "FinancialMetric",
+      "name": "Operating Income",
+      "value": "$36.0B",
+      "segment": null
+    },
+    {
+      "id": "FinancialMetric_b46b8cfed55d88e2",
+      "label": "FinancialMetric",
+      "type": "entity",
+      "__class__": "FinancialMetric",
+      "name": "Net Income",
+      "value": "$31.9B",
+      "segment": null
+    },
+    {
+      "id": "NvidiaEarnings_c5a91e79c011ac5c",
+      "label": "NvidiaEarnings",
+      "type": "entity",
+      "__class__": "NvidiaEarnings",
+      "company": "NVIDIA",
+      "fiscal_period": "Q3 FY2026",
+      "segments": null,
+      "partners": null,
+      "key_metrics": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "BusinessSegment_73589e31cf1b59cb",
+      "target": "Product_870c90d683a554e0",
+      "label": "key_products"
+    },
+    {
+      "source": "BusinessSegment_73589e31cf1b59cb",
+      "target": "Product_8caa00a1a56b64cb",
+      "label": "key_products"
+    },
+    {
+      "source": "BusinessSegment_73589e31cf1b59cb",
+      "target": "Product_0c3a92ea0e28245e",
+      "label": "key_products"
+    },
+    {
+      "source": "BusinessSegment_73589e31cf1b59cb",
+      "target": "Product_76a764b383204f42",
+      "label": "key_products"
+    },
+    {
+      "source": "BusinessSegment_73589e31cf1b59cb",
+      "target": "Product_3bd13d8e627341f4",
+      "label": "key_products"
+    },
+    {
+      "source": "BusinessSegment_918e194f506cda9f",
+      "target": "Product_4320683542f2b4e5",
+      "label": "key_products"
+    },
+    {
+      "source": "BusinessSegment_918e194f506cda9f",
+      "target": "Product_10c3b7fe2e3bce06",
+      "label": "key_products"
+    },
+    {
+      "source": "BusinessSegment_918e194f506cda9f",
+      "target": "Product_3f780f9194fdad65",
+      "label": "key_products"
+    },
+    {
+      "source": "BusinessSegment_655939ea0e0e45b8",
+      "target": "Product_9e69cf5befb8612d",
+      "label": "key_products"
+    },
+    {
+      "source": "BusinessSegment_e99776fc89c38d0d",
+      "target": "Product_dadc56f1eeb9cee0",
+      "label": "key_products"
+    },
+    {
+      "source": "Partner_0df756fd4fcbcd65",
+      "target": "Product_a77b316f4ff5f5d6",
+      "label": "products"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "BusinessSegment_73589e31cf1b59cb",
+      "label": "segments"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "BusinessSegment_918e194f506cda9f",
+      "label": "segments"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "BusinessSegment_655939ea0e0e45b8",
+      "label": "segments"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "BusinessSegment_e99776fc89c38d0d",
+      "label": "segments"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "Partner_0df756fd4fcbcd65",
+      "label": "partners"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "Partner_647cf0b3ab0c5dbe",
+      "label": "partners"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "Partner_636ec743183382f1",
+      "label": "partners"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "Partner_1926476ca583260d",
+      "label": "partners"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "Partner_ad20f2467ee00291",
+      "label": "partners"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "Partner_b0ef7a7aec5e497b",
+      "label": "partners"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "Partner_59c91feb372c5a1c",
+      "label": "partners"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "Partner_8308285e8269d975",
+      "label": "partners"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "Partner_29657e675bbab1ea",
+      "label": "partners"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "Partner_947d2e8cd5011c25",
+      "label": "partners"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "Partner_6bdaee3cf38b9acc",
+      "label": "partners"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "Partner_5e46f3d519bc0edf",
+      "label": "partners"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "Partner_741ae4d773290fbc",
+      "label": "partners"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "FinancialMetric_c246543eb700f7e3",
+      "label": "key_metrics"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "FinancialMetric_669341768e591683",
+      "label": "key_metrics"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "FinancialMetric_4188b7d3a9ce1b13",
+      "label": "key_metrics"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "FinancialMetric_b215b2412889b93a",
+      "label": "key_metrics"
+    },
+    {
+      "source": "NvidiaEarnings_c5a91e79c011ac5c",
+      "target": "FinancialMetric_b46b8cfed55d88e2",
+      "label": "key_metrics"
+    }
+  ],
+  "metadata": {
+    "node_count": 34,
+    "edge_count": 33
+  }
+}

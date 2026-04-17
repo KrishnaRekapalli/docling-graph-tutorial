@@ -1,0 +1,212 @@
+{
+  "nodes": [
+    {
+      "id": "Insurer_fe29f1e706aed92f",
+      "label": "Insurer",
+      "type": "entity",
+      "__class__": "Insurer",
+      "name": "SAFE ALL INSURANCE COMPANY",
+      "address": "P.O. Box 1075 Thiston, FL 12345-6789",
+      "phone": "(123) 456-7891"
+    },
+    {
+      "id": "Insured_ed314a4620ad85a1",
+      "label": "Insured",
+      "type": "entity",
+      "__class__": "Insured",
+      "name": "Estelle Clarion & James Delaney",
+      "address": "596 Crossover Way Clay, FL 17189-2021"
+    },
+    {
+      "id": "Agent_e447cf7817a570b1",
+      "label": "Agent",
+      "type": "entity",
+      "__class__": "Agent",
+      "name": "TONY PRIZE",
+      "agent_number": "#194722",
+      "phone": "(123) 456-7891"
+    },
+    {
+      "id": "Coverage_ed0313f20cf00963",
+      "label": "Coverage",
+      "type": "entity",
+      "__class__": "Coverage",
+      "coverage_code": "Coverage A",
+      "coverage_name": "Dwelling",
+      "limit": "$160,000",
+      "premium": "$859.00"
+    },
+    {
+      "id": "Coverage_221d31d3b213e83a",
+      "label": "Coverage",
+      "type": "entity",
+      "__class__": "Coverage",
+      "coverage_code": "Coverage B",
+      "coverage_name": "Other Structures",
+      "limit": "$3,200",
+      "premium": "Included"
+    },
+    {
+      "id": "Coverage_0d26db320e8c04ff",
+      "label": "Coverage",
+      "type": "entity",
+      "__class__": "Coverage",
+      "coverage_code": "Coverage C",
+      "coverage_name": "Personal Property",
+      "limit": "$104,250",
+      "premium": "Included"
+    },
+    {
+      "id": "Coverage_5dd5783c4ef23b6a",
+      "label": "Coverage",
+      "type": "entity",
+      "__class__": "Coverage",
+      "coverage_code": "Coverage D",
+      "coverage_name": "Loss of Use",
+      "limit": "$20,850",
+      "premium": "Included"
+    },
+    {
+      "id": "Coverage_86d59db006f0781a",
+      "label": "Coverage",
+      "type": "entity",
+      "__class__": "Coverage",
+      "coverage_code": "Coverage E",
+      "coverage_name": "Personal Liability",
+      "limit": "$100,000",
+      "premium": "Included"
+    },
+    {
+      "id": "Coverage_9c4a2895b3d284f8",
+      "label": "Coverage",
+      "type": "entity",
+      "__class__": "Coverage",
+      "coverage_code": "Coverage F",
+      "coverage_name": "Medical Payments",
+      "limit": "$1,000",
+      "premium": "Included"
+    },
+    {
+      "id": "Coverage_18cadb998f54d2fd",
+      "label": "Coverage",
+      "type": "entity",
+      "__class__": "Coverage",
+      "coverage_code": "Water Backup and Sump Overflow",
+      "coverage_name": "Water Backup and Sump Overflow",
+      "limit": "$5,000",
+      "premium": "$25.00"
+    },
+    {
+      "id": "Deductible_a5a0e7b677a1c5a3",
+      "label": "Deductible",
+      "type": "entity",
+      "__class__": "Deductible",
+      "peril_type": "All Other Perils",
+      "amount": "$1,000"
+    },
+    {
+      "id": "Deductible_5d150f4869b24b97",
+      "label": "Deductible",
+      "type": "entity",
+      "__class__": "Deductible",
+      "peril_type": "HURRICANE",
+      "amount": "2% of Coverage A"
+    },
+    {
+      "id": "Deductible_33bc87d1c6bdf70d",
+      "label": "Deductible",
+      "type": "entity",
+      "__class__": "Deductible",
+      "peril_type": "Sinkhole",
+      "amount": "Not Included"
+    },
+    {
+      "id": "HomePolicy_c88f1404047cbd8c",
+      "label": "HomePolicy",
+      "type": "entity",
+      "__class__": "HomePolicy",
+      "policy_number": "FHO295000",
+      "policy_form": "HO-3",
+      "effective_date": "3/28/20",
+      "expiration_date": "3/28/2021",
+      "total_premium": "$854.00",
+      "property_address": "596 Crossover Way Clay, FL 17189-2021",
+      "insurer": null,
+      "insured": null,
+      "agent": null,
+      "coverages": null,
+      "deductibles": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "HomePolicy_c88f1404047cbd8c",
+      "target": "Insurer_fe29f1e706aed92f",
+      "label": "insurer"
+    },
+    {
+      "source": "HomePolicy_c88f1404047cbd8c",
+      "target": "Insured_ed314a4620ad85a1",
+      "label": "insured"
+    },
+    {
+      "source": "HomePolicy_c88f1404047cbd8c",
+      "target": "Agent_e447cf7817a570b1",
+      "label": "agent"
+    },
+    {
+      "source": "HomePolicy_c88f1404047cbd8c",
+      "target": "Coverage_ed0313f20cf00963",
+      "label": "coverages"
+    },
+    {
+      "source": "HomePolicy_c88f1404047cbd8c",
+      "target": "Coverage_221d31d3b213e83a",
+      "label": "coverages"
+    },
+    {
+      "source": "HomePolicy_c88f1404047cbd8c",
+      "target": "Coverage_0d26db320e8c04ff",
+      "label": "coverages"
+    },
+    {
+      "source": "HomePolicy_c88f1404047cbd8c",
+      "target": "Coverage_5dd5783c4ef23b6a",
+      "label": "coverages"
+    },
+    {
+      "source": "HomePolicy_c88f1404047cbd8c",
+      "target": "Coverage_86d59db006f0781a",
+      "label": "coverages"
+    },
+    {
+      "source": "HomePolicy_c88f1404047cbd8c",
+      "target": "Coverage_9c4a2895b3d284f8",
+      "label": "coverages"
+    },
+    {
+      "source": "HomePolicy_c88f1404047cbd8c",
+      "target": "Coverage_18cadb998f54d2fd",
+      "label": "coverages"
+    },
+    {
+      "source": "HomePolicy_c88f1404047cbd8c",
+      "target": "Deductible_a5a0e7b677a1c5a3",
+      "label": "deductibles"
+    },
+    {
+      "source": "HomePolicy_c88f1404047cbd8c",
+      "target": "Deductible_5d150f4869b24b97",
+      "label": "deductibles"
+    },
+    {
+      "source": "HomePolicy_c88f1404047cbd8c",
+      "target": "Deductible_33bc87d1c6bdf70d",
+      "label": "deductibles"
+    }
+  ],
+  "metadata": {
+    "node_count": 14,
+    "edge_count": 13
+  }
+}
