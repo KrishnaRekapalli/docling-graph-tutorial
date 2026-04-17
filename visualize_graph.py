@@ -269,7 +269,7 @@ def make_interactive(G: nx.DiGraph, out_path: Path) -> None:
         bgcolor="#0d1117", font_color="#e6edf3",
         directed=True,
         notebook=False,
-        cdn_resources="inline",   # embed vis.js so it works offline and in VS Code notebooks
+        cdn_resources="in_line",  # embed vis.js so it works offline and in VS Code notebooks
     )
     net.set_options("""
     {
