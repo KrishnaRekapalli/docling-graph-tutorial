@@ -49,9 +49,11 @@ This creates a `.venv` with Python 3.11 and installs all dependencies automatica
 
 Download and install from: **https://ollama.com/download**
 
-- Mac: drag to Applications, launch the app
-- Windows: run the installer, Ollama runs in the system tray
-- Linux: `curl -fsSL https://ollama.com/install.sh | sh`
+- Mac: drag to Applications, **launch the app** — you should see the llama icon in your menu bar
+- Windows: run the installer, **Ollama starts automatically** in the system tray
+- Linux: `curl -fsSL https://ollama.com/install.sh | sh` then `ollama serve`
+
+Ollama must be running before you proceed — the menu bar / tray icon confirms it.
 
 Verify the version (**0.20.7+ required** for gemma4:e4b):
 ```bash
