@@ -36,12 +36,12 @@ Restart your terminal after installing.
 ## Step 2 — Clone the repo and install dependencies
 
 ```bash
-git clone https://github.com/[repo]/docling-graph-tutorial
+git clone https://github.com/KrishnaRekapalli/docling-graph-tutorial
 cd docling-graph-tutorial
-uv sync
+uv sync --python 3.11
 ```
 
-This creates a `.venv` and installs all Python dependencies automatically.
+This creates a `.venv` with Python 3.11 and installs all dependencies automatically.
 
 ---
 
@@ -53,10 +53,12 @@ Download and install from: **https://ollama.com/download**
 - Windows: run the installer, Ollama runs in the system tray
 - Linux: `curl -fsSL https://ollama.com/install.sh | sh`
 
-Verify it's running:
+Verify the version (**0.20.7+ required** for gemma4:e4b):
 ```bash
-ollama list
+ollama --version
 ```
+
+If your version is older, download the latest from the link above before continuing.
 
 ---
 
@@ -80,17 +82,22 @@ The `Modelfile-gemma4-8k` file is included in the repo root.
 
 ## Step 5 — (Optional) Remote API keys
 
-If you have an OpenAI or Anthropic API key you'd like to use alongside the local model:
+If you have a remote API key you'd like to use alongside the local model:
 
 ```bash
 cp .env.example .env
 ```
 
-Edit `.env` and add your key:
+Edit `.env` and add whichever key you have — only one is needed:
 ```
-OPENAI_API_KEY=sk-...
-# or
-ANTHROPIC_API_KEY=sk-ant-...
+OPENAI_API_KEY="..."        # OpenAI
+MISTRAL_API_KEY="..."       # Mistral
+GEMINI_API_KEY="..."        # Google Gemini
+
+# IBM WatsonX
+WATSONX_API_KEY="..."       # IBM WatsonX API Key
+WATSONX_PROJECT_ID="..."    # IBM WatsonX Project ID
+WATSONX_URL="..."           # IBM WatsonX URL (optional)
 ```
 
 Remote models are **not required** — `gemma4-8k` runs fully locally.
@@ -105,7 +112,7 @@ uv run python 00_setup_check.py
 
 Expected output:
 ```
-  ✓  Python 3.13
+  ✓  Python 3.11
   ✓  Package: docling-graph
   ✓  Package: docling
   ...
@@ -113,7 +120,7 @@ Expected output:
   ✓  Ollama model: gemma4-8k
   ✓  Model pre-warmed (keep_alive=1h)
 
-  ✓  All 13 checks passed — you're ready!
+  ✓  All 14 checks passed — you're ready!
 ```
 
 ---
@@ -137,7 +144,7 @@ gemma4:e4b runs on CPU on Intel Macs (~5–10 min per run). Use the pre-run fall
 ```bash
 uv run python load_prerun.py
 ```
-Then open `01_concepts.ipynb` — the graphs will already be loaded.
+Then open `01_quickstart.ipynb` — the graphs will already be loaded.
 
 ---
 
