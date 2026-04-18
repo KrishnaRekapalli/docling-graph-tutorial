@@ -4,8 +4,7 @@ __pycache__/
 *.pyc
 *.pkl
 
-# PDF source files (large, distribute separately)
-data/*.pdf
+
 
 # All extraction output — keep only prerun fallbacks
 data/test_output/

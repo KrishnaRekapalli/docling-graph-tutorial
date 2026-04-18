@@ -64,7 +64,13 @@ If your version is older, download the latest from the link above before continu
 
 ---
 
-## Step 4 — Download the model (~10 GB)
+## Step 4 — Download a model
+
+Two options — pick one:
+
+### Option A — gemma4:e4b (~10 GB, recommended)
+
+Higher accuracy, handles more complex schemas well.
 
 ```bash
 ollama pull gemma4:e4b
@@ -79,6 +85,24 @@ ollama create gemma4-8k -f Modelfile-gemma4-8k
 ```
 
 The `Modelfile-gemma4-8k` file is included in the repo root.
+
+### Option B — qwen3.5:2b (~2.7 GB, quick download)
+
+Faster to download and lighter on RAM. Works well for single-page documents.
+
+```bash
+ollama pull qwen3.5:2b
+```
+
+Then create a custom variant with thinking mode disabled (required for docling-graph):
+
+```bash
+ollama create qwen3.5-2b -f Modelfile-qwen3.5-2b
+```
+
+The `Modelfile-qwen3.5-2b` file is included in the repo root.
+
+> **Note:** In `01_quickstart.ipynb`, set `PROVIDER = "qwen"` to use this model.
 
 ---
 
@@ -102,7 +126,7 @@ WATSONX_PROJECT_ID="..."    # IBM WatsonX Project ID
 WATSONX_URL="..."           # IBM WatsonX URL (optional)
 ```
 
-Remote models are **not required** — `gemma4-8k` runs fully locally.
+Remote models are **not required** — `gemma4-8k` or `qwen3.5-2b` runs fully locally.
 
 ---
 
@@ -137,6 +161,9 @@ Ollama app isn't running. Open it from Applications (Mac) or system tray (Window
 
 **`gemma4-8k` not found**
 Run Step 4 again. Check `ollama list` to see what's downloaded.
+
+**`qwen3.5-2b` not found / extraction returns empty graph**
+The base `qwen3.5:2b` model has thinking mode enabled by default, which breaks extraction. Make sure you ran `ollama create qwen3.5-2b -f Modelfile-qwen3.5-2b` after pulling. The custom variant disables thinking mode.
 
 **Corporate Windows — Ollama port blocked**
 Ollama uses port 11434. If blocked, use a remote API key instead (Step 5).

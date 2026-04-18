@@ -71,7 +71,7 @@ def main():
     print()
     if all_ok:
         print("  All pre-run graphs ready.")
-        print("  Open notebooks/01_concepts.ipynb — extraction cells will load these automatically.\n")
+        print("  Open notebooks/01_quickstart.ipynb — extraction cells will load these automatically.\n")
     else:
         print("  Some graphs are missing. Run the extraction scripts first:")
         print("    uv run python extract_home_policy.py")

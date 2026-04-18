@@ -5,7 +5,7 @@ Setup verification for the AMLC 2026 tutorial:
 Run this before the tutorial:
     uv run python 00_setup_check.py
 
-All checks must be green before starting 01_concepts.ipynb.
+All checks must be green before starting 01_quickstart.ipynb.
 If you're stuck, run: uv run python load_prerun.py
 """
 
@@ -87,7 +87,7 @@ for path, desc in prerun_files.items():
         print(f"{WARN}  Pre-run: {p.name} — not found (run load_prerun.py if extraction fails)")
 
 
-# ── Ollama daemon ─────────────────────────────────────────────────────────────
+# ── Ollama daemon + version ───────────────────────────────────────────────────
 print()
 ollama_running = False
 try:
@@ -100,6 +100,23 @@ try:
 except Exception:
     check("Ollama daemon running", False,
           "Start Ollama: open the Ollama app or run 'ollama serve'")
+
+if ollama_running:
+    try:
+        req = urllib.request.Request("http://localhost:11434/api/version")
+        with urllib.request.urlopen(req, timeout=3) as resp:
+            version_str = json.loads(resp.read()).get("version", "0.0.0")
+        parts = [int(x) for x in version_str.split(".")[:3]]
+        while len(parts) < 3:
+            parts.append(0)
+        version_ok = parts >= [0, 20, 7]
+        check(
+            f"Ollama version {version_str} (>=0.20.7 required)",
+            version_ok,
+            "Update Ollama: https://ollama.com/download" if not version_ok else "",
+        )
+    except Exception:
+        check("Ollama version check", False, "Could not read version from Ollama API")
 
 
 # ── gemma4-8k model ───────────────────────────────────────────────────────────
@@ -151,9 +168,10 @@ except ImportError:
 print()
 print("  Optional remote providers (not required):")
 for name, env_key in [
-    ("OpenAI",    "OPENAI_API_KEY"),
-    ("Anthropic", "ANTHROPIC_API_KEY"),
-    ("Gemini",    "GEMINI_API_KEY"),
+    ("OpenAI",   "OPENAI_API_KEY"),
+    ("Mistral",  "MISTRAL_API_KEY"),
+    ("Gemini",   "GEMINI_API_KEY"),
+    ("WatsonX",  "WATSONX_API_KEY"),
 ]:
     val = os.getenv(env_key, "")
     if val:
@@ -170,7 +188,7 @@ total  = len(results)
 
 if passed == total:
     print(f"  ✓  All {total} checks passed — you're ready!\n")
-    print("  Next: open notebooks/01_concepts.ipynb\n")
+    print("  Next: open notebooks/01_quickstart.ipynb\n")
 else:
     failed = total - passed
     print(f"  {failed} check(s) failed out of {total}.\n")
