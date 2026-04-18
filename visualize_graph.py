@@ -30,14 +30,19 @@ import matplotlib.patches as mpatches
 ROOT_COLOR   = "#1a1a2e"   # dark navy — always used for the document root
 PALETTE = [
     "#e94560",   # red
-    "#0f3460",   # dark blue
-    "#533483",   # purple
-    "#16213e",   # slate navy
-    "#2d6a4f",   # green
+    "#2563eb",   # bright blue  (was #0f3460 — too dark against black bg)
+    "#7c3aed",   # bright purple (was #533483 — too dark)
+    "#059669",   # teal green
+    "#d97706",   # amber
     "#b5451b",   # burnt orange
-    "#1b4965",   # steel blue
+    "#0891b2",   # cyan
     "#5c4033",   # brown
 ]
+
+# Per-type overrides — these take priority over the dynamic palette
+TYPE_COLORS = {
+    "FinancialMetric": "#f59e0b",   # bright amber — always visible on dark bg
+}
 
 
 def build_color_map(G: nx.DiGraph) -> dict[str, str]:
@@ -80,7 +85,7 @@ _color_map: dict[str, str] = {}
 
 
 def _color(cls: str) -> str:
-    return _color_map.get(cls, _color_map.get("default", "#555555"))
+    return TYPE_COLORS.get(cls) or _color_map.get(cls, _color_map.get("default", "#555555"))
 
 
 NODE_BORDER = {
@@ -167,7 +172,7 @@ def _inject_legend_and_panel(out_path: Path, color_map: dict, G: nx.DiGraph) -> 
     # Build legend HTML rows
     legend_rows = ""
     for cls, count in type_counts.most_common():
-        color = color_map.get(cls, "#555555")
+        color = TYPE_COLORS.get(cls) or color_map.get(cls, "#555555")
         legend_rows += (
             f'<div style="display:flex;align-items:center;gap:8px;margin:4px 0">'
             f'<div style="width:14px;height:14px;border-radius:50%;background:{color};'
@@ -227,6 +232,10 @@ def _inject_legend_and_panel(out_path: Path, color_map: dict, G: nx.DiGraph) -> 
                       "borderWidth","shadow","hidden"]);
   function waitForNetwork() {{
     if (typeof network === 'undefined') {{ setTimeout(waitForNetwork, 200); return; }}
+    // Physics disabled — fit all nodes into view after a short delay
+    setTimeout(function() {{
+      network.fit({{ animation: {{ duration: 600, easingFunction: "easeInOutQuad" }} }});
+    }}, 300);
     network.on("click", function(params) {{
       if (!params.nodes.length) return;
       var nodeId = params.nodes[0];
@@ -273,15 +282,7 @@ def make_interactive(G: nx.DiGraph, out_path: Path) -> None:
     )
     net.set_options("""
     {
-      "physics": {
-        "barnesHut": {
-          "gravitationalConstant": -8000,
-          "centralGravity": 0.4,
-          "springLength": 140,
-          "springConstant": 0.06
-        },
-        "stabilization": {"iterations": 200}
-      },
+      "physics": {"enabled": false},
       "edges": {
         "arrows": {"to": {"enabled": true, "scaleFactor": 0.6}},
         "color": {"color": "#4a5568", "highlight": "#e94560"},
@@ -300,22 +301,57 @@ def make_interactive(G: nx.DiGraph, out_path: Path) -> None:
     }
     """)
 
+    # Radial layout: root at center, all direct children in a ring, grandchildren
+    # in an outer ring. This guarantees no node starts hidden under another.
+    import math
+
+    def _radial_positions(G: nx.DiGraph) -> dict:
+        roots = [n for n in G.nodes() if G.in_degree(n) == 0]
+        root = roots[0] if roots else list(G.nodes())[0]
+        children = list(G.successors(root))
+        grandchildren = [
+            n for n in G.nodes()
+            if n != root and n not in children
+        ]
+        pos = {root: (0.0, 0.0)}
+        r1 = 350
+        for i, n in enumerate(children):
+            angle = 2 * math.pi * i / max(len(children), 1)
+            pos[n] = (r1 * math.cos(angle), r1 * math.sin(angle))
+        r2 = 650
+        for i, n in enumerate(grandchildren):
+            angle = 2 * math.pi * i / max(len(grandchildren), 1)
+            pos[n] = (r2 * math.cos(angle), r2 * math.sin(angle))
+        return pos
+
+    pos = _radial_positions(G)
+
     for node_id, data in G.nodes(data=True):
         cls = data.get("__class__") or data.get("type", "default")
         color = _color(cls)
         border = NODE_BORDER.get(cls, NODE_BORDER["default"])
         label = _node_label(node_id, data)
-        size = 40 if cls.endswith("Earnings") else (28 if cls in ("BusinessSegment", "Partner") else 18)
+        size = (40 if cls.endswith("Earnings")
+                else 28 if cls in ("BusinessSegment", "Partner")
+                else 22 if cls == "FinancialMetric"
+                else 18)
 
+        x, y = pos.get(node_id, (0.0, 0.0))
+        extra = {k: v for k, v in data.items()
+                 if k not in {"id", "label", "type", "__class__", "value"}}
+        # "value" is a reserved vis.js scaling field — rename it so the panel shows it
+        if data.get("value") not in (None, ""):
+            extra["metric_value"] = data["value"]
         net.add_node(
             node_id,
             label=label,
-            title="",   # disable native hover tooltip — panel handles this
+            title="",
             color={"background": color, "border": border, "highlight": {"background": "#e94560"}},
             size=size,
             font={"size": 13 if size >= 28 else 11},
-            **{k: v for k, v in data.items()
-               if k not in {"id", "label", "type", "__class__"}},
+            x=float(x),
+            y=float(y),
+            **extra,
         )
 
     for src, tgt, data in G.edges(data=True):
